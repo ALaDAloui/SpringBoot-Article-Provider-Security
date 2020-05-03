@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+
+<title>Registration</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-default ">
+		<div class="container">
+			<div class="navbar-header">
+				
+				<a class="navbar-brand" href="#" th:href="@{/}">Welcome <span class="label label-success" sec:authentication="principal.username">User</span></a>
+			</div>
+			
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav nav-pills">
+					
+					<!--  <li role="presentation" class="active "><a  th:href="@{/provider/list}">Provider</a></li>
+					<li role="presentation" class="active"><a th:href="@{/article/list}">Article</a></li> -->
+					<li role="presentation" class="active" sec:authorize="isAuthenticated()">
+					<a class=" bg-info" th:href="@{/logout}"><span class="glyphicon glyphicon-hand-right" aria-hidden="true">
+					</span>  Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<br>
+	<br>
+	<div class="container">
+		<h2>Check out your list of providers and articles</h2>
+		<div class="btn-group btn-group-lg" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><a  th:href="@{/provider/list}">Provider</a></button>
+  <button type="button" class="btn btn-default"><a th:href="@{/article/list}">Article</a></button>
+  
+</div>
+
+		
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>
