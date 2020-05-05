@@ -27,6 +27,7 @@ public class User {
     private String lastName;
     private String email;
     private String password;
+    private String profilePicture;
     
     
     
@@ -48,13 +49,14 @@ public class User {
     
     
 	
-	public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
+	public User(String firstName, String lastName, String email, String password, Collection<Role> roles , String profilePicture) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 		this.roles = roles;
+		this.profilePicture = profilePicture;
 	}
 	public User() {
 		super();
@@ -93,6 +95,12 @@ public class User {
 	
 	
 	
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
+	}
 	public Collection<Role> getRoles() {
 		return roles;
 	}
@@ -108,6 +116,7 @@ public class User {
 		            ", email='" + email + '\'' +
 		            ", password='" + "*********" + '\'' +
 		            ", roles=" + roles +
+		            ", profilePicture='" + profilePicture + '\'' +
 		            '}';
 	}
 	
