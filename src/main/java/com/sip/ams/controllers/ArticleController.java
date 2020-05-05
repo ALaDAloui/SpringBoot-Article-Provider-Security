@@ -110,13 +110,13 @@ public class ArticleController {
 	public String showeditArticle (@PathVariable("id") long id ,Model model ) {
 		
 		Article article = articleRepository.findById(id).orElseThrow(()->new IllegalArgumentException("Invalid provider Id:" + id));
-				 /* * 5ater get ==> te5ou l page html chfeha melowel (feha article bil prix * wel label w provider bil id mte3ou )' */	
+				 
 												
 												 
 													
-		model.addAttribute("articles",article);                              /* l page html bich twari l'article */
-		model.addAttribute("providers" , providerRepository.findAll());        /* w l provider*/
-		model.addAttribute("idProvider", article.getProvider().getId()); /* provider te5ouh bil id mte3ou */
+		model.addAttribute("articles",article);                             
+		model.addAttribute("providers" , providerRepository.findAll());       
+		model.addAttribute("idProvider", article.getProvider().getId()); 
 		
 		return "article/updateArticles";
 	}
